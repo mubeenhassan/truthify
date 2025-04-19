@@ -2,15 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { LockIcon } from "./lock-icon";
 import { ScoreGaugeRecent } from "./score-gauge-recent";
+import { ReportCard } from "@/components/ui/report-card";
 
-const ProfileCard = ({ profile, className }) => {
-  const { id, name, title, logo, avatar, score, isLocked, report } = profile;
+const ProfileCardContent = ({ profile }) => {
+  const { name, title, logo, avatar, score, isLocked } = profile;
 
-  const CardContent = (
+  return (
     <div
       className={`p-4 space-y-4 ${
         !isLocked ? "hover:bg-slate-50 cursor-pointer" : "cursor-not-allowed"
-      } ${className}`}
+      }`}
     >
       {/* Top Profile Info */}
       <div className="flex items-center justify-between">
@@ -45,37 +46,31 @@ const ProfileCard = ({ profile, className }) => {
           )}
         </div>
       </div>
-
-      {/* Conditionally show report */}
-      {report && (
-        <div className="bg-gray-50 rounded-xl p-4 shadow-sm flex flex-col gap-2">
-          <p className="text-base font-semibold text-gray-900">
-            {report.title}
-          </p>
-          <div className="text-sm text-gray-600 flex flex-wrap gap-4">
-            <div>
-              Main Speaker:{" "}
-              <span className="font-semibold">{report.speaker}</span>
-            </div>
-            <div>
-              Source: <span className="font-semibold">{report.source}</span>
-            </div>
-            <div>
-              Date: <span className="text-gray-700">{report.date}</span>
-            </div>
-            <div>
-              Custom: <span className="text-gray-700">{report.customDate}</span>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
+};
 
-  return isLocked ? (
-    CardContent
-  ) : (
-    <Link href={`/dashboard/profile/${id}`}>{CardContent}</Link>
+const ProfileCard = ({ profile }) => {
+  const { id, isLocked, report } = profile;
+
+  const ProfileContent = <ProfileCardContent profile={profile} />;
+
+  return (
+    <div className="space-y-4">
+      {isLocked ? (
+        ProfileContent
+      ) : (
+        <Link href={`/dashboard/profile/${id}`} className="block no-underline">
+          {ProfileContent}
+        </Link>
+      )}
+
+      {report && (
+        <ReportCard
+          report={{ ...report, isLocked: isLocked, variant: "compact" }}
+        />
+      )}
+    </div>
   );
 };
 

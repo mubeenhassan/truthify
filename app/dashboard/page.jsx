@@ -42,6 +42,7 @@ const getMockData = () => {
       avatar: "/images/avatar-holmes.png",
       isLocked: false,
       report: {
+        id: 1,
         title: "Report Title 1",
         speaker: "Jensen",
         source: "Youtube",
