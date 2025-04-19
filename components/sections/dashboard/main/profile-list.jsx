@@ -1,5 +1,6 @@
 "use client";
-import ProfileCard from "./profile-card";
+
+import ProfileCard from "@/components/ui/profile-card";
 
 export function ProfileList({ profiles, isRecent = false }) {
   return (

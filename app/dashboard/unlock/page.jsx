@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronDown } from "lucide-react";
 import { ProfilesTab } from "@/components/sections/dashboard/unlock/profiles-tab";
 import { ReportsTab } from "@/components/sections/dashboard/unlock/reports-tab";
 
@@ -38,7 +37,9 @@ export default function UnlockPage() {
           <button
             onClick={() => handleTabChange("profiles")}
             className={`px-6 py-2 text-sm cursor-pointer font-medium rounded-l-lg ${
-              activeTab === "profiles" ? "bg-blue-600 text-white" : "bg-white text-gray-700 hover:bg-gray-100"
+              activeTab === "profiles"
+                ? "bg-blue-600 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-100"
             }`}
           >
             Profiles Available
@@ -46,7 +47,9 @@ export default function UnlockPage() {
           <button
             onClick={() => handleTabChange("reports")}
             className={`px-6 py-2 text-sm cursor-pointer font-medium rounded-r-lg ${
-              activeTab === "reports" ? "bg-blue-600 text-white" : "bg-white text-gray-700 hover:bg-gray-100"
+              activeTab === "reports"
+                ? "bg-blue-600 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-100"
             }`}
           >
             Reports Available
@@ -54,7 +57,6 @@ export default function UnlockPage() {
         </div>
       </div>
 
-      {/* Filter UI + Data Tabs */}
       {activeTab === "profiles" ? <ProfilesTab /> : <ReportsTab />}
     </div>
   );

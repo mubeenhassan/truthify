@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
+import ProfileCard from "@/components/ui/profile-card";
 
 const MOCK_PROFILES = [
   {
@@ -12,7 +13,7 @@ const MOCK_PROFILES = [
     avatar: "/images/avatar-satya.png",
     logo: "/icons/microsoft.svg",
     reportCount: 238,
-    score: 78,
+    score: 7.8,
     industry: "Technology",
     isLocked: true,
   },
@@ -23,7 +24,7 @@ const MOCK_PROFILES = [
     avatar: "/images/avatar-jensen.png",
     logo: "/icons/nvidia.svg",
     reportCount: 134,
-    score: 82,
+    score: 8.2,
     industry: "Technology",
   },
   {
@@ -33,7 +34,7 @@ const MOCK_PROFILES = [
     avatar: "/images/avatar-sundar.png",
     logo: "/icons/google-color.svg",
     reportCount: 195,
-    score: 75,
+    score: 7.5,
     industry: "Technology",
   },
   {
@@ -43,7 +44,7 @@ const MOCK_PROFILES = [
     avatar: "/images/avatar-elon.png",
     logo: "/images/tesla.png",
     reportCount: 310,
-    score: 63,
+    score: 6.3,
     industry: "Automotive",
   },
 ];
@@ -156,63 +157,63 @@ export function ProfilesTab() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedProfiles.map((profile) => (
-          <ProfileCard key={profile.id} profile={profile} />
+          <ProfileCard key={profile.id} profile={profile} variant="second" />
         ))}
       </div>
     </div>
   );
 }
 
-function ProfileCard({ profile }) {
-  return (
-    <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
-      <div className="p-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="h-12 w-12 rounded-full overflow-hidden">
-            <Image
-              src={profile.avatar || "/placeholder.svg?height=48&width=48"}
-              alt={profile.name || "Profile"}
-              width={48}
-              height={48}
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div>
-            <h3 className="font-semibold text-gray-900">{profile.name}</h3>
-            <p className="text-sm text-gray-500">{profile.title}</p>
-          </div>
-        </div>
-        <div className="flex items-center gap-3">
-          <Image
-            src={profile.logo || "/placeholder.svg?height=24&width=24"}
-            alt={profile.name || "Company"}
-            width={24}
-            height={24}
-            className="h-6 w-6 object-contain"
-          />
-          <div className="flex items-center justify-center h-10 w-10 bg-gray-200 rounded-full">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-gray-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div className="px-4 pb-4 text-sm">
-        <span className="text-gray-600">
-          {profile.reportCount} Reports Available
-        </span>
-      </div>
-    </div>
-  );
-}
+// function ProfileCard({ profile }) {
+//   return (
+//     <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+//       <div className="p-4 flex items-center justify-between">
+//         <div className="flex items-center gap-3">
+//           <div className="h-12 w-12 rounded-full overflow-hidden">
+//             <Image
+//               src={profile.avatar || "/placeholder.svg?height=48&width=48"}
+//               alt={profile.name || "Profile"}
+//               width={48}
+//               height={48}
+//               className="h-full w-full object-cover"
+//             />
+//           </div>
+//           <div>
+//             <h3 className="font-semibold text-gray-900">{profile.name}</h3>
+//             <p className="text-sm text-gray-500">{profile.title}</p>
+//           </div>
+//         </div>
+//         <div className="flex items-center gap-3">
+//           <Image
+//             src={profile.logo || "/placeholder.svg?height=24&width=24"}
+//             alt={profile.name || "Company"}
+//             width={24}
+//             height={24}
+//             className="h-6 w-6 object-contain"
+//           />
+//           <div className="flex items-center justify-center h-10 w-10 bg-gray-200 rounded-full">
+//             <svg
+//               xmlns="http://www.w3.org/2000/svg"
+//               className="h-5 w-5 text-gray-500"
+//               fill="none"
+//               viewBox="0 0 24 24"
+//               stroke="currentColor"
+//             >
+//               <path
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//                 strokeWidth={2}
+//                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+//               />
+//             </svg>
+//           </div>
+//         </div>
+//       </div>
+//       <div className="px-4 pb-4 text-sm">
+//         <span className="text-gray-600">
+//           {profile.reportCount} Reports Available
+//         </span>
+//       </div>
+//     </div>
+//   );
+// }

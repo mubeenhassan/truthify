@@ -1,5 +1,5 @@
 export function ScoreGaugeRecent({ scoreString }) {
-  
+  console.log(scoreString)
   const score = Number.parseFloat(scoreString) || 0
   const percentage = Math.max(0, Math.min(100, (score / 10) * 100)) // Assuming score is out of 10
   const strokeWidth = 10
