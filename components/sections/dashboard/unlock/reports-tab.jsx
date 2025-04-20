@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { ReportCard } from "@/components/ui/report-card";
 
-const reportsData = [
+const MOCK_REPORTS = [
   {
     id: 1,
     title: "The Future of AI: Innovations and Challenges",
@@ -80,25 +80,44 @@ const reportsData = [
 ];
 
 const sortOptions = [
-  "Date: Latest to Oldest",
-  "Date: Oldest to Latest",
-  "Title: A to Z",
-  "Title: Z to A",
+  "Latest to Oldest",
+  "Oldest to Latest",
+  "A to Z",
+  "Z to A",
 ];
 
-export function ReportsTab() {
+export function ReportsTab({
+  title = "Available Reports",
+  subTitle = "Popular reports this week:",
+  reports = MOCK_REPORTS,
+}) {
   const [sortBy, setSortBy] = useState("");
   const [sortDropdownOpen, setSortDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
-  const sortedReports = [...reportsData].sort((a, b) => {
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setSortDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const sortedReports = [...reports].sort((a, b) => {
     switch (sortBy) {
-      case "Date: Latest to Oldest":
+      case "Latest to Oldest":
         return new Date(b.date) - new Date(a.date);
-      case "Date: Oldest to Latest":
+      case "Oldest to Latest":
         return new Date(a.date) - new Date(b.date);
-      case "Title: A to Z":
+      case "A to Z":
         return a.title.localeCompare(b.title);
-      case "Title: Z to A":
+      case "Z to A":
         return b.title.localeCompare(a.title);
       default:
         return 0;
@@ -109,10 +128,13 @@ export function ReportsTab() {
     <div className="w-full max-w-6xl">
       <div className="relative w-full flex flex-col-reverse lg:flex-row items-center lg:items-center justify-center py-6">
         <div className="flex gap-2 lg:ml-auto lg:mr-6">
-          <div className="flex justify-between items-center mb-6">
+          <div
+            className="flex justify-between items-center mb-6"
+            ref={dropdownRef}
+          >
             <div className="relative">
               <button
-                className="flex items-center justify-between w-48 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
+                className="flex items-center justify-between w-40 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
                 onClick={() => setSortDropdownOpen(!sortDropdownOpen)}
               >
                 {sortBy || "Sort By"}
@@ -141,15 +163,12 @@ export function ReportsTab() {
           </div>
         </div>
 
-        <div className="lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 mb-6 lg:mb-0">
-          <h2 className="text-xl font-semibold text-gray-800">
-            Available Reports
-          </h2>
-          <p className="text-sm text-gray-500">Popular searches this week:</p>
+        <div className="lg:absolute text-center lg:left-1/2 lg:transform lg:-translate-x-1/2 mb-6 lg:mb-0">
+          <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
+          <p className="text-sm text-gray-500">{subTitle}</p>
         </div>
       </div>
 
-      {/* Report Cards */}
       <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-6">
         {sortedReports.map((report) => (
           <ReportCard key={report.id} report={report} />

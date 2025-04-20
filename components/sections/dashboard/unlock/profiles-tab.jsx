@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import ProfileCard from "@/components/ui/profile-card";
 
@@ -51,19 +50,46 @@ const MOCK_PROFILES = [
 
 const industryFilters = ["All Industries", "Technology", "Automotive"];
 const sortOptions = [
-  "Score: High to Low",
-  "Score: Low to High",
-  "Reports: Most",
-  "Reports: Least",
+  "High to Low",
+  "Low to High",
+  "Most Reports",
+  "Least Reports",
 ];
 
-export function ProfilesTab() {
+export function ProfilesTab({
+  title = "Available Profiles",
+  subTitle = "Popular searches this week:",
+  profiles = MOCK_PROFILES,
+}) {
   const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
   const [sortBy, setSortBy] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [sortDropdownOpen, setSortDropdownOpen] = useState(false);
 
-  const filteredProfiles = MOCK_PROFILES.filter((profile) =>
+  const industryRef = useRef(null);
+  const sortRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        industryRef.current &&
+        !industryRef.current.contains(e.target)
+      ) {
+        setDropdownOpen(false);
+      }
+      if (
+        sortRef.current &&
+        !sortRef.current.contains(e.target)
+      ) {
+        setSortDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const filteredProfiles = profiles.filter((profile) =>
     selectedIndustry === "All Industries"
       ? true
       : profile.industry === selectedIndustry
@@ -71,13 +97,13 @@ export function ProfilesTab() {
 
   const sortedProfiles = [...filteredProfiles].sort((a, b) => {
     switch (sortBy) {
-      case "Score: High to Low":
+      case "High to Low":
         return b.score - a.score;
-      case "Score: Low to High":
+      case "Low to High":
         return a.score - b.score;
-      case "Reports: Most":
+      case "Most Reports":
         return b.reportCount - a.reportCount;
-      case "Reports: Least":
+      case "Least Reports":
         return a.reportCount - b.reportCount;
       default:
         return 0;
@@ -89,9 +115,10 @@ export function ProfilesTab() {
       <div className="flex gap-2 justify-between items-center mb-6 ">
         <div className="relative w-full flex flex-col-reverse lg:flex-row items-center lg:items-center justify-center py-6">
           <div className="flex gap-2 lg:ml-auto lg:mr-6">
-            <div className="relative">
+            {/* Industry Filter */}
+            <div className="relative" ref={industryRef}>
               <button
-                className="flex items-center justify-between w-48 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
+                className="flex items-center justify-between w-40 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 {selectedIndustry || "Filter by Industry"}
@@ -117,9 +144,11 @@ export function ProfilesTab() {
                 </div>
               )}
             </div>
-            <div className="relative">
+
+            {/* Sort Dropdown */}
+            <div className="relative" ref={sortRef}>
               <button
-                className="flex items-center justify-between w-48 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
+                className="flex items-center justify-between w-40 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
                 onClick={() => setSortDropdownOpen(!sortDropdownOpen)}
               >
                 {sortBy || "Sort By"}
@@ -146,15 +175,16 @@ export function ProfilesTab() {
               )}
             </div>
           </div>
-          <div className="lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 mb-6 lg:mb-0">
-            <h2 className="text-xl font-semibold text-gray-800">
-              Available Profiles
-            </h2>
-            <p className="text-sm text-gray-500">Popular searches this week:</p>
+
+          {/* Title and Subtitle */}
+          <div className="lg:absolute text-center lg:left-1/2 lg:transform lg:-translate-x-1/2 mb-6 lg:mb-0">
+            <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
+            <p className="text-sm text-gray-500">{subTitle}</p>
           </div>
         </div>
       </div>
 
+      {/* Profile Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedProfiles.map((profile) => (
           <ProfileCard key={profile.id} profile={profile} variant="second" />
@@ -163,57 +193,3 @@ export function ProfilesTab() {
     </div>
   );
 }
-
-// function ProfileCard({ profile }) {
-//   return (
-//     <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
-//       <div className="p-4 flex items-center justify-between">
-//         <div className="flex items-center gap-3">
-//           <div className="h-12 w-12 rounded-full overflow-hidden">
-//             <Image
-//               src={profile.avatar || "/placeholder.svg?height=48&width=48"}
-//               alt={profile.name || "Profile"}
-//               width={48}
-//               height={48}
-//               className="h-full w-full object-cover"
-//             />
-//           </div>
-//           <div>
-//             <h3 className="font-semibold text-gray-900">{profile.name}</h3>
-//             <p className="text-sm text-gray-500">{profile.title}</p>
-//           </div>
-//         </div>
-//         <div className="flex items-center gap-3">
-//           <Image
-//             src={profile.logo || "/placeholder.svg?height=24&width=24"}
-//             alt={profile.name || "Company"}
-//             width={24}
-//             height={24}
-//             className="h-6 w-6 object-contain"
-//           />
-//           <div className="flex items-center justify-center h-10 w-10 bg-gray-200 rounded-full">
-//             <svg
-//               xmlns="http://www.w3.org/2000/svg"
-//               className="h-5 w-5 text-gray-500"
-//               fill="none"
-//               viewBox="0 0 24 24"
-//               stroke="currentColor"
-//             >
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 strokeWidth={2}
-//                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-//               />
-//             </svg>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="px-4 pb-4 text-sm">
-//         <span className="text-gray-600">
-//           {profile.reportCount} Reports Available
-//         </span>
-//       </div>
-//     </div>
-//   );
-// }

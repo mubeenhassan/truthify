@@ -1,31 +1,9 @@
-"use client";
+import DashboardPageLayout from "@/components/sections/global/dashboard/layout";
 
-import { useState } from "react";
-import Sidebar from "@/components/sections/global/dashboard/sidebar/sidebar";
-import MobileSidebar from "@/components/sections/global/dashboard/sidebar/mobile-sidebar";
-import Topbar from "@/components/sections/global/dashboard/topbar/topbar";
-
+export const metadata = {
+  title: "Truthify Dashboard",
+  description: "AI-Powered Integrity Reports for Businesses",
+};
 export default function DashboardLayout({ children }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  return (
-    <div className="flex h-screen bg-gray-50">
-      {/* Desktop sidebar - hidden on mobile, shown on larger screens */}
-      <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
-        <Sidebar />
-      </div>
-
-      {/* Mobile sidebar */}
-      <MobileSidebar
-        isOpen={sidebarOpen}
-        onClose={() => setSidebarOpen(false)}
-      />
-
-      {/* Main content */}
-      <div className="md:ml-64 flex flex-col flex-1">
-        <Topbar onMenuClick={() => setSidebarOpen(true)} />
-        <main className="flex-1 p-2 overflow-auto">{children}</main>
-      </div>
-    </div>
-  );
+  return <DashboardPageLayout>{children}</DashboardPageLayout>;
 }

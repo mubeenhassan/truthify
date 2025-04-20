@@ -105,13 +105,13 @@ export default function SearchBox() {
 
       {/* Results */}
       {loading && (
-        <p className="text-sm absolute top-[37px] text-gray-400">
+        <p className="text-sm absolute top-[38px] text-gray-400">
           Searching...
         </p>
       )}
 
       {!loading && results.length > 0 && (
-        <div className="w-full py-2 absolute top-[37px] z-10 bg-white shadow-md rounded-md space-y-1">
+        <div className="w-full py-2 absolute top-[38px] z-10 bg-white shadow-md rounded-md space-y-1">
           {results.map((user) => (
             <div
               key={user.id}
@@ -145,7 +145,7 @@ export default function SearchBox() {
       )}
 
       {!loading && query && results.length === 0 && (
-        <p className="w-full h-20 text-sm absolute top-[37px] z-10 bg-white text-gray-400 flex items-center justify-center rounded-md shadow">
+        <p className="w-full h-20 text-sm absolute top-[38px] z-10 bg-white text-gray-400 flex items-center justify-center rounded-md shadow">
           No results found.
         </p>
       )}
