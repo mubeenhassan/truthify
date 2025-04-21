@@ -123,3 +123,16 @@
 
 
 
+.progress {
+  position: absolute;
+  top: 0;
+  transform: translateX(-100%);
+  animation: bar 0.5s ease-in forwards ;
+}
+  
+  @keyframes bar {
+    
+    100% {
+      transform: translateX(0%);
+    }
+  }

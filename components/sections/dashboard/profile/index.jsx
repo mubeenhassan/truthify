@@ -2,8 +2,8 @@
 
 import { useEffect, useState, useMemo } from "react";
 import ProfileScore from "./tabs/profile-score";
-import CumulativeMetrics from "./tabs/cumulative-metrics";
 import ReportScores from "./tabs/report-scores";
+import CumulativeMetrics from "./tabs/cumulative-metrics";
 
 const tabComponents = {
   "profile-scores": ProfileScore,
