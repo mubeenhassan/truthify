@@ -31,14 +31,14 @@ export function ReportCard({ report }) {
 
       {/* Content */}
       <div className="flex-grow">
-        <h3 className="text-lg font-medium text-gray-800 mb-1">{title}</h3>
+        <h3 className="text-sm font-medium text-gray-800 mb-1">{title}</h3>
         <div
           className={cn(
             "grid gap-x-4",
             variant === "compact" ? "grid-cols-2" : "grid-cols-2"
           )}
         >
-          <div className="text-gray-600 text-sm">
+          <div className="text-gray-600 text-xs">
             <p>
               Main Speaker: <span className="font-medium">{speaker}</span>
             </p>
@@ -46,7 +46,7 @@ export function ReportCard({ report }) {
               Source: <span className="font-medium">{source}</span>
             </p>
           </div>
-          <div className="text-gray-600 text-sm">
+          <div className="text-gray-600 text-xs">
             <p>
               Date: <span className="font-medium">{date}</span>
             </p>

@@ -1,8 +1,13 @@
-import React from "react";
+import { getUserProfile } from "@/lib/api";
+import ProfileDetails from "@/components/sections/dashboard/profile";
 
-const ProfileDetail = async ({ params }) => {
+export default async function ProfileDetailPage({ params }) {
   const { id } = await params;
-  return <div>ProfileDetail {id}</div>;
-};
+  const profileData = await getUserProfile(id);
 
-export default ProfileDetail;
+  return (
+    <div className="flex max-w-7xl relative flex-col md:flex-row min-h-screen">
+      <ProfileDetails id={id} profile={profileData} />
+    </div>
+  );
+}
