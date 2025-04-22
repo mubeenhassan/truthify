@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { X } from "lucide-react";
+import { ProgressBar } from "@/components/ui/progess-bar";
 
 export default function AttributeCard({
   id,
@@ -7,12 +8,9 @@ export default function AttributeCard({
   progress = 0,
   icon,
   type = "progress",
-  status = "positive",
+  negative,
   description,
 }) {
-  const barSections = Array(9).fill(undefined);
-  const percentage = progress * 10;
-
   return (
     <div
       id={id}
@@ -48,34 +46,7 @@ export default function AttributeCard({
           </div>
 
           <span className="text-[14px] text-[#292929] -mt-1">{label}</span>
-
-          {/* Inline Progress Bar */}
-          <div className="mt-2">
-            <div
-              style={{
-                clipPath: "polygon(0% 0, 100% 0, 90% 100%, 0 100%)",
-              }}
-              className="w-full h-[13px] bg-[#EBF2F5] overflow-hidden relative flex justify-between gap-1"
-            >
-              <div
-                style={{
-                  clipPath: "polygon(16% 0, 100% 0, 84% 100%, 0 100%)",
-                  width: `${percentage}%`,
-                }}
-                className={`${
-                  status === "positive" ? "bg-green-500" : "bg-red-500"
-                } absolute top-0 left-0 h-full`}
-              ></div>
-
-              {barSections.map((_, i) => (
-                <div
-                  key={i}
-                  className="w-[2px] h-[110%] transform rotate-[40deg] bg-white"
-                ></div>
-              ))}
-            </div>
-          </div>
-
+          <ProgressBar progress={progress} negative={negative} />
           <div className="w-6 h-6 cursor-pointer rounded-sm border-blue-600 border flex justify-center items-center mt-1">
             <i className="transform -rotate-15 text-blue-600 -ml-[2px]">i</i>
           </div>
