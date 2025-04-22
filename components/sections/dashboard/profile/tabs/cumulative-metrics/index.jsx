@@ -1,23 +1,13 @@
-import ProfileCard from "../../profile-card";
-import ProfileTabs from "../../profile-tabs";
-import AttributeEvaluation from "./attributeEvaluation";
-import MetricsProgress from "./metricsProgress";
+import AttributeEvaluation from "./attribute-evaluation";
+import MetricsProgress from "./metrics-progress";
 
-const CumulativeMetrics = ({ activeTab, setActiveTab, profile }) => {
-  const { info, reports, fallacies } = profile;
-  return(
-<>
-    <div className="w-full md:w-6/12  p-2  h-screen">
-      <ProfileTabs activeTab={activeTab} setActiveTab={setActiveTab} />
-      <ProfileCard {...info} />
-      <AttributeEvaluation/>
-    </div>
-    <div className="w-full md:w-8/12 bg-[#F1F6FA] p-4 h-screen">
-    <MetricsProgress/>
-    </div>
-  </>
-  )
-  
+const ContentLeft = () => <AttributeEvaluation />;
+
+const ContentRight = () => <MetricsProgress />;
+
+const CumulativeMetrics = {
+  ContentLeft,
+  ContentRight,
 };
 
 export default CumulativeMetrics;

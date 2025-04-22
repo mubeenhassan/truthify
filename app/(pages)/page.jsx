@@ -396,7 +396,6 @@ export default function Index() {
             </div>
 
             {/* Right Content (Profile List) */}
-            {/* This needs more structure if scrolling/interactivity is desired */}
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-h-[500px] overflow-y-auto relative">
               <ul className="divide-y divide-white/20">
                 {profiles.map((profile) => (

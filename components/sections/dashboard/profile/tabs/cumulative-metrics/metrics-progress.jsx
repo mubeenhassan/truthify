@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ProgessBar from "../progessBar";
+import ProgessBar from "./progess-bar";
 import { X } from "lucide-react";
 
 function MetricsProgress() {
@@ -90,9 +90,6 @@ function MetricsProgress() {
             </div>
           </div>
         </div>
-        <div className="w-[98%] mx-auto bg-white rounded-2xl h-1 relative my-5 ">
-          <div className="absolute top-0 left-0 w-[22%] h-full bg-gray-200"></div>
-        </div>
         {/* negative Attributes Progress */}
 
         <h3 className="text-[18px] text-[#292929] font-semibold mt-7 my-1">
@@ -129,9 +126,6 @@ function MetricsProgress() {
               </div>
             </div>
           ))}
-        </div>
-        <div className="w-[98%] mx-auto bg-white rounded-2xl h-1 relative my-5 ">
-          <div className="absolute top-0 left-0 w-[22%] h-full bg-gray-200"></div>
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ const FallacyDetection = ({ fallacies }) => {
       <h3 className="text-zinc-800 text-lg font-semibold">Fallacy Detection</h3>
       <div className="p-3 bg-white rounded-lg border border-gray-200 shadow-sm relative">
         <div className="relative">
-          <div className="space-y-4 divide-y divide-zinc-100 max-h-[500px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-3 pb-12">
+          <div className="space-y-4 divide-y divide-zinc-100 max-h-[500px] overflow-y-auto thin-scrollbar pr-3 pb-12">
             {fallacies.map((fallacy) => (
               <div key={fallacy.id} className="pb-4 flex gap-4">
                 <div className="relative flex-shrink-0">
