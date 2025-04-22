@@ -1,7 +1,6 @@
 import {
   LayoutGrid,
   User,
-  Users,
   FileText,
   FileEdit,
   BarChart3,
@@ -12,7 +11,6 @@ import {
 } from "lucide-react";
 import Logo from "@/components/ui/logo";
 import NavItem from "./nav-item";
-import UserProfile from "./user-profile";
 import Link from "next/link";
 
 const navItems = [
@@ -62,7 +60,7 @@ export default function Sidebar() {
   return (
     <div className="flex flex-col h-full border-r border-gray-200 bg-white">
       <div className="py-8 pl-5">
-        <Logo/>
+        <Logo />
       </div>
 
       <div className="px-4 py-3">
@@ -73,7 +71,12 @@ export default function Sidebar() {
 
       <nav className="flex-1 px-2 pb-4 space-y-1 max-h-[275px] overflow-y-scroll">
         {navItems.map((item) => (
-          <NavItem key={item.href} href={item.href} icon={item.icon} label={item.label} />
+          <NavItem
+            key={item.href}
+            href={item.href}
+            icon={item.icon}
+            label={item.label}
+          />
         ))}
       </nav>
 
@@ -94,11 +97,39 @@ export default function Sidebar() {
       </div>
 
       <div className="border-t border-gray-200 pt-4">
-        <UserProfile
-          name="Robert R"
-          email="robert14r@gmail.com"
-          avatarUrl="/images/avatar-user.png"
-        />
+        <Link
+          href="/dashboard/settings"
+          className="flex items-center px-4 py-2 bg-[#F1F6FA] w-fit m-auto cursor-pointer hover:bg-gray-100 rounded-md"
+        >
+          <div className="flex-shrink-0">
+            <img
+              className="inline-block h-9 w-9 rounded-full object-cover"
+              src="/images/avatar-user.png"
+              alt="Robert R"
+            />
+          </div>
+          <div className="ml-3 flex-1 min-w-0">
+            <div className="text-sm font-medium text-gray-700 truncate">
+              Robert R
+            </div>
+            <div className="text-xs text-gray-500 truncate">
+              robert14r@gmail.com
+            </div>
+          </div>
+          <button className="ml-1 text-gray-400 hover:text-gray-500">
+            <svg
+              className={`h-5 w-5 transform transition-transform duration-200`}
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+        </Link>
       </div>
 
       <div className="px-4 py-3">
