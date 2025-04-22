@@ -1,9 +1,9 @@
-import ReportSection from "./report-section";
+import AllReports from "./all-reports";
 import ComparativeAnalysis from "./comparative-analysis";
 import FallacyDetection from "./fallacy-detection";
 
 const ContentLeft = ({ profile }) => (
-  <ReportSection reports={profile.reports} />
+  <AllReports reports={profile.reports} />
 );
 
 const ContentRight = ({ profile }) => (
@@ -13,9 +13,9 @@ const ContentRight = ({ profile }) => (
   </>
 );
 
-const ProfileScore = {
+const ReportScores = {
   ContentLeft,
   ContentRight,
 };
 
-export default ProfileScore;
+export default ReportScores;

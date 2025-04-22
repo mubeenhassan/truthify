@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
+import ProfileTabs from "./profile-tabs";
+import ProfileCard from "./profile-card";
 import ProfileScore from "./tabs/profile-score";
 import CumulativeMetrics from "./tabs/cumulative-metrics";
 import ReportScores from "./tabs/report-scores";
@@ -27,11 +29,21 @@ const ProfileDetails = ({ id, profile }) => {
     return () => window.removeEventListener("hashchange", setHashAsTab);
   }, [id]);
 
-  const ActiveComponent = useMemo(() => tabComponents[activeTab], [activeTab]);
+  const ActiveComponent = tabComponents[activeTab];
 
-  return ActiveComponent ? (
-    <ActiveComponent activeTab={activeTab} setActiveTab={setActiveTab} profile={profile} />
-  ) : null;
+  return (
+    <div className="flex flex-col md:flex-row w-full">
+      <div className="w-full flex flex-col items-center md:w-[43%] p-2 px-0 sm:px-5 gap-4">
+        <ProfileTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+        <ProfileCard {...profile.info} />
+        {ActiveComponent && <ActiveComponent.ContentLeft profile={profile} />}
+      </div>
+
+      <div className="w-full md:w-[57%] bg-[#F5F8FB] p-2 px-0 sm:px-5">
+        {ActiveComponent && <ActiveComponent.ContentRight profile={profile} />}
+      </div>
+    </div>
+  );
 };
 
 export default ProfileDetails;
