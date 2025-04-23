@@ -2,12 +2,10 @@ import {
   LayoutGrid,
   User,
   FileText,
-  FileEdit,
   BarChart3,
   LogOut,
   Settings,
   Lock,
-  ArrowUpRight,
 } from "lucide-react";
 import Logo from "@/components/ui/logo";
 import NavItem from "./nav-item";
@@ -18,11 +16,6 @@ const navItems = [
     href: "/dashboard",
     icon: <LayoutGrid className="w-5 h-5" />,
     label: "Main",
-  },
-  {
-    href: "/dashboard/make-your-own",
-    icon: <FileEdit className="w-5 h-5" />,
-    label: "Make Your Own",
   },
   {
     href: "/dashboard/my-profiles",
