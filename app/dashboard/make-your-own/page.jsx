@@ -1,9 +1,10 @@
+import MakeYourOwn from '@/components/sections/dashboard/make-your-own'
 import React from 'react'
 
-const MakeYourOwn = () => {
+const MakeYourOwnPage = () => {
   return (
-    <div>MakeYourOwn</div>
+    <MakeYourOwn/>
   )
 }
 
-export default MakeYourOwn
+export default MakeYourOwnPage
