@@ -49,11 +49,6 @@ const navItems = [
     icon: <Lock className="w-5 h-5" />,
     label: "Unlock",
   },
-  {
-    href: "/dashboard/upgrade-plan",
-    icon: <ArrowUpRight className="w-5 h-5" />,
-    label: "Upgrade Plan",
-  },
 ];
 
 export default function Sidebar() {
@@ -90,9 +85,12 @@ export default function Sidebar() {
             <br />
             Check Available
           </div>
-          <button className="mt-3 bg-white text-[#289de8] px-4 py-1 rounded-md text-sm font-medium">
+          <Link
+            href="/dashboard/upgrade-plan"
+            className="mt-3 bg-white text-[#289de8] px-4 py-1 rounded-md text-sm font-medium"
+          >
             Upgrade
-          </button>
+          </Link>
         </div>
       </div>
 

@@ -1,9 +1,10 @@
+import UpgradePlan from '@/components/sections/global/dashboard/upgrade-plan'
 import React from 'react'
 
-const UpgradePlan = () => {
+const UpgradePlanPage = () => {
   return (
-    <div>UpgradePlan</div>
+    <UpgradePlan/>
   )
 }
 
-export default UpgradePlan
+export default UpgradePlanPage
