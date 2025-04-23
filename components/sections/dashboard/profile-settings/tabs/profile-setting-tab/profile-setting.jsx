@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Checkbox from "./checkbox";
 import { useState } from "react";
+import Link from "next/link";
 
 function ProfileSetting() {
   const [checkboxes, setCheckboxes] = useState({
@@ -100,13 +101,13 @@ function ProfileSetting() {
                 {" "}
                 Background Integrity Check{" "}
               </span>
-              <a
-                href=""
+              <Link
+                href="/dashboard/upgrade-plan"
                 className="text-[#016CCD] text-[12px] md:text-[15px] inline underline "
               >
                 {" "}
                 Upgrade Plan{" "}
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex items-center gap-8 ">

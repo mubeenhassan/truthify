@@ -4,7 +4,6 @@ import {
   FileText,
   BarChart3,
   LogOut,
-  Settings,
   Lock,
 } from "lucide-react";
 import Logo from "@/components/ui/logo";
@@ -31,11 +30,6 @@ const navItems = [
     href: "/dashboard/profile",
     icon: <User className="w-5 h-5" />,
     label: "Profile",
-  },
-  {
-    href: "/dashboard/settings",
-    icon: <Settings className="w-5 h-5" />,
-    label: "Settings",
   },
   {
     href: "/dashboard/unlock",
@@ -89,7 +83,7 @@ export default function Sidebar() {
 
       <div className="border-t border-gray-200 pt-4">
         <Link
-          href="/dashboard/settings"
+          href="/dashboard/profile"
           className="flex items-center px-4 py-2 bg-[#F1F6FA] w-fit m-auto cursor-pointer hover:bg-gray-100 rounded-md"
         >
           <div className="flex-shrink-0">

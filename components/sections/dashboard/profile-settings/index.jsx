@@ -16,7 +16,7 @@ function  AccountSetting({activeTab}) {
 
     const TabComponent= tabComponents[activeTab]
   return (
-    <div className='w-full py-2'>
+    <div className='w-full py-2 max-w-3xl'>
       {TabComponent && <TabComponent/>}
      
     </div>
