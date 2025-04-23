@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ProfilesTab } from "@/components/sections/dashboard/unlock/profiles-tab";
+import { ProfilesTab } from "@/components/sections/dashboard/all-profiles/profiles-tab";
 
 const PROFILES_AVAILABLE = [
   {

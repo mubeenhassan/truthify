@@ -46,7 +46,7 @@ const ReportList = ({ reportList }) => {
                   {data.category}
                 </span>
               </div>
-              <ProgressBar progress={data.score} />
+              <ProgressBar progress={data.score} negative={data.negative}/>
             </div>
 
             <div className="flex-grow mr-4 overflow-hidden w-48">

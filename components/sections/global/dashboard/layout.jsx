@@ -23,7 +23,7 @@ export default function DashboardPageLayout({ children }) {
       {/* Main content */}
       <div className="md:ml-64 flex flex-col flex-1">
         <Topbar onMenuClick={() => setSidebarOpen(true)} />
-        <main className="flex-1 px-4 overflow-auto bg-white">{children}</main>
+        <div className="flex-1 px-4 overflow-auto bg-white">{children}</div>
       </div>
     </div>
   );

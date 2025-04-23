@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ProfilesTab } from "@/components/sections/dashboard/unlock/profiles-tab";
-import { ReportsTab } from "@/components/sections/dashboard/unlock/reports-tab";
+import { ProfilesTab } from "@/components/sections/dashboard/all-profiles/profiles-tab";
+import { ReportsTab } from "@/components/sections/dashboard/all-profiles/reports-tab";
 
-export default function UnlockPage() {
+export default function AllProfiles() {
   const [activeTab, setActiveTab] = useState("profiles");
 
   useEffect(() => {

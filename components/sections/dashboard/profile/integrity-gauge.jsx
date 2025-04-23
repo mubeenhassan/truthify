@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function IntegrityGauge({
   score,
-  maxScore = 5,
+  maxScore = 10,
   label = "Total Integrity Score",
   animationDuration = 1500,
 }) {
@@ -28,7 +28,6 @@ export default function IntegrityGauge({
 
     return () => clearInterval(interval);
   }, [activeBarCount, animationDuration]);
-
   return (
     <div className="relative w-full max-w-md mx-auto overflow-hidden aspect-[2/1]">
       <div className="relative flex justify-center items-start h-full">

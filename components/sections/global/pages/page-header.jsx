@@ -14,27 +14,24 @@ const PageHeader = () => {
             />
           </Link>
           <div className="hidden lg:flex lg:gap-x-12">
-            <Link
+            {/* <Link
               href="/scores"
               className="text-base font-medium leading-6 text-neutral-800 hover:text-sky-600"
             >
-              {" "}
-              Scores{" "}
+              Scores
             </Link>
             <Link
               href="/about"
               className="text-base font-medium leading-6 text-neutral-800 hover:text-sky-600"
             >
-              {" "}
-              About Us{" "}
+              About Us
             </Link>
             <Link
               href="/how-it-works"
               className="text-base font-medium leading-6 text-neutral-800 hover:text-sky-600"
             >
-              {" "}
-              How It Works{" "}
-            </Link>
+              How It Works
+            </Link> */}
           </div>
         </div>
         <div className="flex items-center gap-6">

@@ -5,6 +5,9 @@ import {
   BarChart3,
   LogOut,
   Lock,
+  Users,
+  FileStack,
+  CirclePlus,
 } from "lucide-react";
 import Logo from "@/components/ui/logo";
 import NavItem from "./nav-item";
@@ -22,19 +25,24 @@ const navItems = [
     label: "My Profiles",
   },
   {
+    href: "/dashboard/all-profiles",
+    icon: <Users className="w-5 h-5" />,
+    label: "All Profiles",
+  },
+  {
     href: "/dashboard/my-reports",
     icon: <FileText className="w-5 h-5" />,
     label: "My Reports",
   },
   {
-    href: "/dashboard/profile",
-    icon: <User className="w-5 h-5" />,
-    label: "Profile",
+    href: "/dashboard/all-reports",
+    icon: <FileStack className="w-5 h-5" />,
+    label: "All Reports",
   },
   {
-    href: "/dashboard/unlock",
-    icon: <Lock className="w-5 h-5" />,
-    label: "Unlock",
+    href: "/dashboard/make-your-own",
+    icon: <CirclePlus className="w-5 h-5" />,
+    label: "Make Your Own",
   },
 ];
 

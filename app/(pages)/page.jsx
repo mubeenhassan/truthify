@@ -1,3 +1,5 @@
+import { LockIcon } from "@/components/sections/dashboard/main/lock-icon";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
@@ -131,7 +133,7 @@ export default function Index() {
       <section className="relative isolate overflow-hidden bg-white pt-8 pb-12 sm:pt-12 sm:pb-16">
         <div className="absolute inset-y-0 right-0 -z-10 w-full lg:w-1/2">
           {" "}
-          <div className="absolute inset-0 bg-gradient-to-bl from-sky-400 to-sky-600 opacity-90" />{" "}
+          <div className="" />{" "}
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
@@ -208,33 +210,26 @@ export default function Index() {
             misinformation, and strengthen your arguments—effortlessly.
           </p>
           {/* Avatar Row */}
-          <div className="mt-12 flex justify-center gap-4">
-            {/* Replace with actual avatar paths */}
-            <img
-              className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-              src="/images/avatar-1.png"
-              alt="User avatar"
-            />
-            <img
-              className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-              src="/images/avatar-2.png"
-              alt="User avatar"
-            />
-            <img
-              className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-              src="/images/avatar-3.png"
-              alt="User avatar"
-            />
-            <img
-              className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-              src="/images/avatar-4.png"
-              alt="User avatar"
-            />
-            <img
-              className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-              src="/images/avatar-5.png"
-              alt="User avatar"
-            />
+          <div className="mt-12 flex justify-center">
+            <div className="flex -space-x-[2.5%]">
+              {[
+                "/images/avatar-1.png",
+                "/images/avatar-2.png",
+                "/images/avatar-3.png",
+                "/images/avatar-4.png",
+                "/images/avatar-5.png",
+              ].map((src, index) => (
+                <div key={index} className="relative h-20 w-20">
+                  <Image
+                    src={src}
+                    alt={`User avatar ${index + 1}`}
+                    fill
+                    className="rounded-full ring-2 ring-white object-cover"
+                    sizes="64px"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -423,11 +418,7 @@ export default function Index() {
                         alt={`${profile.name}'s company logo`}
                       />
                     </div>
-                    <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-bl from-sky-400 to-blue-500 border-2 border-white/50">
-                      <span className="text-lg font-extrabold text-white">
-                        {profile.score}
-                      </span>
-                    </div>
+                    <LockIcon />
                   </li>
                 ))}
               </ul>

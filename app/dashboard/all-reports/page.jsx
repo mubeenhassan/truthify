@@ -153,8 +153,8 @@ const REPORTS_CREATED = [
   },
 ];
 
-export default function MyReportsPage() {
-  const [activeTab, setActiveTab] = useState("created");
+export default function AllReportsPage() {
+  const [activeTab, setActiveTab] = useState("available");
 
   useEffect(() => {
     const hash = window.location.hash.split("?")[0].replace("#", "");

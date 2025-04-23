@@ -10,7 +10,7 @@ export default function ProfileCard({
   companyLogo,
   profileImage,
   integrityScore,
-  maxScore = 5,
+  maxScore,
 }) {
   return (
     <div className="w-full mx-auto bg-white p-0 sm:p-6">

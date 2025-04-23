@@ -108,8 +108,8 @@ export default function DashboardMainPage() {
   const dashboardData = getMockData();
 
   return (
-    <div className="flex bg-slate-50 font-['Inter']">
-      <main className="flex-1 bg-slate-50">
+    <div className="flex font-['Inter']">
+      <main className="flex-1">
         <MainContent dashboardData={dashboardData} />
       </main>
     </div>
