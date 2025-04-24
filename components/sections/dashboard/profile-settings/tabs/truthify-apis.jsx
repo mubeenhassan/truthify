@@ -51,10 +51,10 @@ export default function TruthifyAPI() {
   };
 
   return (
-    <div className="space-y-8 py-6">
+    <div className="space-y-8 py-6 ">
       <div>
-        <h2 className="text-xl font-medium text-gray-800 mb-2">Truthify API</h2>
-        <p className="text-gray-600">
+        <h2 className="text-xl font-medium text-[#4B4B4B] mb-2">Truthify API</h2>
+        <p className="text-gray-600 text-[14px] font-medium">
           Truthify External API is used to fetch and edit data inside of your
           portal via code. If you have lost or forgotten any API Keys, Please
           generate a new one.{" "}
@@ -66,7 +66,7 @@ export default function TruthifyAPI() {
       </div>
 
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-medium text-gray-800">All API Keys</h3>
+        <h3 className="text-[18px] font-medium text-[#4B4B4B]">All API Keys</h3>
         <Button
           className="bg-[#016CCD] hover:bg-blue-700 text-white"
           onClick={handleGenerateKey}
@@ -79,14 +79,14 @@ export default function TruthifyAPI() {
         <table className="w-full">
           <thead>
             <tr className="bg-gray-50 border-b">
-              <th className="text-left p-4 font-medium text-gray-700">
+              <th className="text-left p-4 font-light text-[#49454FCC]">
                 Created BY
               </th>
-              <th className="text-left p-4 font-medium text-gray-700">
+              <th className="text-left p-4 font-light text-[#49454FCC]">
                 Date Created
               </th>
-              <th className="text-left p-4 font-medium text-gray-700">Key</th>
-              <th className="text-left p-4 font-medium text-gray-700">
+              <th className="text-left p-4 font-light text-[#49454FCC]">Key</th>
+              <th className="text-left p-4 font-light text-[#49454FCC]">
                 Allowed Environment
               </th>
               <th className="p-4"></th>
@@ -98,8 +98,8 @@ export default function TruthifyAPI() {
                 key={apiKey.id}
                 className="border-b last:border-b-0 hover:bg-gray-50 transition-colors"
               >
-                <td className="p-4 text-gray-600">{apiKey.id}</td>
-                <td className="p-4 text-gray-600">{apiKey.dateCreated}</td>
+                <td className="p-4 text-[#222222E5]">{apiKey.id}</td>
+                <td className="p-4 text-[#222222E5]">{apiKey.dateCreated}</td>
                 <td className="p-4">
                   <div className="flex items-center">
                     <span className="bg-gray-800 text-white px-3 py-1 rounded">
@@ -113,7 +113,7 @@ export default function TruthifyAPI() {
                     </button>
                   </div>
                 </td>
-                <td className="p-4 text-gray-600">{apiKey.environment}</td>
+                <td className="p-4 text-[#222222E5]">{apiKey.environment}</td>
                 <td className="p-4 text-right">
                   <button
                     className="text-gray-500 hover:text-red-500"

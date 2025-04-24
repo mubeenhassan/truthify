@@ -13,6 +13,10 @@ const config = {
           "Noto Color Emoji",
         ],
       },
+      colors: {
+        primary: "#016CCD",
+        secondary: "#069AEE",
+      },
     },
   },
   plugins: ["@tailwindcss/postcss"],

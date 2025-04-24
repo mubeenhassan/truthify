@@ -121,7 +121,18 @@
   }
 }
 
-
+.bg-primary{
+  background-color: #016CCD;
+}
+.bg-secondary{
+  background-color: #069AEE;
+}
+.text-primary{
+  color: #016CCD;
+}
+.text-secondary{
+  color: #069AEE;
+}
 
 .progress {
   position: absolute;

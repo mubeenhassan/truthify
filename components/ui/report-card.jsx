@@ -19,7 +19,7 @@ export function ReportCard({ report }) {
   const CardContent = () => (
     <div
       className={cn(
-        "relative flex items-start w-full rounded-2xl border border-gray-200 bg-white shadow-sm transition-colors",
+        "relative flex items-start w-full rounded-lg border border-gray-200 bg-white shadow-sm transition-colors",
         variant === "compact" ? "p-2" : "p-4",
         className
       )}
@@ -31,7 +31,7 @@ export function ReportCard({ report }) {
 
       {/* Content */}
       <div className="flex-grow">
-        <h3 className="text-sm font-medium text-gray-800 mb-1">{title}</h3>
+        <h3 className="text-sm font-semibold text-gray-800 mb-1">{title}</h3>
         <div
           className={cn(
             "grid gap-x-4",
@@ -40,15 +40,15 @@ export function ReportCard({ report }) {
         >
           <div className="text-gray-600 text-xs">
             <p>
-              Main Speaker: <span className="font-medium">{speaker}</span>
+              Main Speaker: <span className="font-semibold ">{speaker}</span>
             </p>
             <p>
-              Source: <span className="font-medium">{source}</span>
+              Source: <span className="font-semibold">{source}</span>
             </p>
           </div>
           <div className="text-gray-600 text-xs">
             <p>
-              Date: <span className="font-medium">{date}</span>
+              Date: <span className="font-semibold">{date}</span>
             </p>
             {customDate && (
               <p>

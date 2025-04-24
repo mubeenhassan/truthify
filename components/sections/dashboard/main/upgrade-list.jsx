@@ -21,7 +21,7 @@ export function UpgradeList({ upgradeItems }) {
                 className="h-4 w-4 text-sky-600"
               />
             </div>
-            <span className="text-sm font-semibold text-zinc-800">
+            <span className="text-[14px] font-semibold text-[#333333]">
               {item.name}
             </span>
           </div>

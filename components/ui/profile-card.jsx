@@ -44,7 +44,7 @@ const ProfileCardContent = ({ profile, variant }) => {
             <p className="text-lg font-semibold text-gray-900">{name}</p>
             <p className="text-sm text-gray-500">{title}</p>
             {variant === "second" ? (
-              <p className="text-sm font-medium">
+              <p className="text-sm font-semibold">
                 {reportCount}{" "}
                 <span className="text-gray-500"> Reports Available</span>
               </p>
