@@ -19,9 +19,9 @@ const ProfileStatsCard = ({ title, count, subtitle, chartData, countries }) => {
 
   return (
     <div className="bg-white shadow-sm rounded-xl p-5 border border-slate-100">
-      <h3 className="text-sm font-semibold text-zinc-800">{title}</h3>
+      <h3 className="text-[14px]  font-semibold text-[#23272E]">{title}</h3>
 
-      <p className="text-2xl font-bold text-zinc-800 mt-1">{count}</p>
+      <p className="text-[24px] font-bold text-[#333333] mt-1">{count}</p>
       <p className="text-xs font-medium text-neutral-400 mb-4">{subtitle}</p>
 
       {/* Bar Chart */}
@@ -39,9 +39,10 @@ const ProfileStatsCard = ({ title, count, subtitle, chartData, countries }) => {
       <hr className="border-gray-100 -mx-5 mb-4" />
 
       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-sm font-semibold text-zinc-800">
+        <h3 className="text-[14px] font-semibold text-[#23272E]">
           Profile Added by Country
-        </h3>
+        </h3 >
+        <h3 className="text-[14px] font-semibold text-[#23272E]">Fallacies</h3>
       </div>
 
       <CountryList countries={countries} />

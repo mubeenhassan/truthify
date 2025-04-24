@@ -16,8 +16,8 @@ export function MainContent({ dashboardData }) {
   } = dashboardData;
 
   return (
-    <div className="max-w-full mx-auto grid grid-cols-1 xl:grid-cols-12 gap-6">
-      <div className="xl:col-span-5 space-y-6 py-4">
+    <div className="max-w-full mx-auto grid grid-cols-1 xl:grid-cols-12 gap-6 ">
+      <div className="xl:col-span-5 space-y-6 py-4 overflow-hidden">
         <div className="px-1">
           <h2 className="text-xl font-semibold text-zinc-800 mb-1">
             Most Searched this Week
@@ -26,9 +26,9 @@ export function MainContent({ dashboardData }) {
             "Some of our most popular searches this week."
           </p>
         </div>
-
+        <div className="">
         <ProfileList profiles={mostSearched} />
-
+        </div>
         <div className="text-center pt-1">
           <Link
             href="/dashboard/all-profiles"
@@ -37,10 +37,11 @@ export function MainContent({ dashboardData }) {
             View All
           </Link>
         </div>
-        {recentProfile.length > 0 ? (
+
+        {!recentProfile.length > 0 ? (
           <ProfileList profiles={recentProfile} isRecent={true} />
         ) : (
-          <div className="bg-white h-32 shadow-sm rounded-xl p-5 border border-slate-100">
+          <div className="bg-white h-48 shadow-sm rounded-xl p-5 border border-slate-100">
             <h3 className="text-lg font-semibold text-zinc-800 mb-2">
               My Recent Profile
             </h3>
@@ -55,7 +56,7 @@ export function MainContent({ dashboardData }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <Link
             href="/dashboard/make-your-own"
-            className="flex items-center justify-center gap-2 px-6 py-4 bg-sky-600 text-white rounded-lg shadow hover:bg-sky-700 transition-colors text-base font-semibold"
+            className="flex items-center justify-center gap-2 px-6 py-4 bg-primary text-white rounded-lg shadow hover:bg-sky-700 transition-colors text-[18px] font-medium"
           >
             <Image
               width={20}
@@ -67,8 +68,8 @@ export function MainContent({ dashboardData }) {
             Make Your Own
           </Link>
           <Link
-            href="/dashboard/my-reports?filter=new"
-            className="flex items-center justify-center gap-2 px-6 py-4 bg-white text-zinc-600 rounded-xl border border-slate-200 shadow-sm hover:bg-slate-50 transition-colors text-base font-semibold"
+            href="/dashboard/all-reports?filter=new"
+            className="flex items-center justify-center gap-2 px-6 py-4 bg-white rounded-xl border border-slate-200 shadow-sm hover:bg-slate-50 transition-colors text-[18px] text-[#585858] font-semibold"
           >
             <Image
               width={20}
@@ -83,7 +84,7 @@ export function MainContent({ dashboardData }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white shadow-sm rounded-xl p-5 flex flex-col items-center justify-between border border-slate-100">
-            <h3 className="text-base font-semibold text-zinc-800 mb-4 self-start">
+            <h3 className="text-[20px]  font-semibold text-zinc-800 mb-4 self-start">
               Average TruthMetric
             </h3>
             <div className="relative w-36 h-36 mb-4">
@@ -98,7 +99,7 @@ export function MainContent({ dashboardData }) {
                   cy="18"
                 />
                 <circle
-                  className="text-sky-600"
+                  className="text-sky-800"
                   strokeWidth="4"
                   strokeDasharray={`${100 * 0.78}, ${100}`}
                   strokeLinecap="round"
@@ -117,7 +118,7 @@ export function MainContent({ dashboardData }) {
             </div>
             <div className="flex justify-between w-full text-center mt-2">
               <div>
-                <p className="text-3xl font-semibold text-zinc-800">3</p>
+                <p className="text-[32px] font-semibold text-[#333333]">3</p>
                 <p className="text-[11px] font-medium text-zinc-500 opacity-90 leading-tight mt-1">
                   Average Fallacies
                   <br />
@@ -125,7 +126,7 @@ export function MainContent({ dashboardData }) {
                 </p>
               </div>
               <div>
-                <p className="text-3xl font-semibold text-zinc-800">
+                <p className="text-[32px] font-semibold text-[#333333]">
                   83<span className="text-lg">%</span>
                 </p>
                 <p className="text-[11px] font-medium text-zinc-500 opacity-90 leading-tight mt-1">
@@ -144,10 +145,10 @@ export function MainContent({ dashboardData }) {
           />
 
           <div className="bg-white shadow-sm rounded-xl p-5 border border-slate-100">
-            <h3 className="text-base font-semibold text-zinc-800 mb-1">
+            <h3 className="text-[18px] font-semibold text-[#23272E] mb-1">
               Common Fallacies
             </h3>
-            <p className="text-sm font-medium text-neutral-400 mb-4">
+            <p className="text-[14px] font-medium text-[#8B909A] mb-4">
               Last 7 days
             </p>
 
@@ -155,7 +156,7 @@ export function MainContent({ dashboardData }) {
           </div>
 
           <div className="bg-white shadow-sm rounded-xl p-5 border border-slate-100">
-            <h3 className="text-base font-semibold text-zinc-800 mb-3">
+            <h3 className="text-[18px] font-semibold text-[#23272E] mb-3">
               Upgrade and Access More
             </h3>
 

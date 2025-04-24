@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { Upload, Mic, Play, Pause, Trash2, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function MakeYourOwn() {
   const [uploadedFiles, setUploadedFiles] = useState([
@@ -521,13 +522,13 @@ export default function MakeYourOwn() {
                 This may take a few minutes.
               </p>
 
-              <button
+              <Link
+                href="/dashboard/profile/1"
                 className="flex cursor-pointer items-center justify-center gap-2 bg-blue-500 text-white py-3 px-6 rounded-md font-medium mx-auto"
-                onClick={() => setShowAnalysisModal(false)}
               >
                 SEE HOW WE ANALYZE DATA
                 <ArrowRight className="h-5 w-5" />
-              </button>
+              </Link>
             </div>
           </div>
         )}

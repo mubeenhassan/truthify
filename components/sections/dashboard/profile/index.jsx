@@ -32,7 +32,7 @@ const ProfileDetails = ({ id, profile }) => {
   const ActiveComponent = tabComponents[activeTab];
 
   return (
-    <div className="flex flex-col md:flex-row w-full">
+    <div className="flex flex-col md:flex-row w-full overflow-hidden ">
       <div className="w-full flex flex-col items-center md:w-[43%] p-2 px-0 sm:px-5 gap-4">
         <ProfileTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         <ProfileCard {...profile.info} />

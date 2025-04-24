@@ -74,15 +74,15 @@ export default function PaymentSetting() {
       </div>
 
       <div className="space-y-4">
-        <div className="font-medium">Credit Card</div>
+        <div className="font-semibold text-[15px] text-[#4B4B4B]">Credit Card</div>
         <div className="flex items-center border rounded-md p-3 bg-gray-50">
-          <div className="flex-1">XXXX XXXX XXXX 1978</div>
+          <div className="flex-1 text-[16px] text-[#333333]">XXXX XXXX XXXX 1978</div>
           <div className="text-gray-500 uppercase font-medium">VISA</div>
         </div>
       </div>
 
       <div className="space-y-4">
-        <div className="font-medium">Card Holder Name</div>
+        <div className="font-semibold text-[15px] text-[#4B4B4B]">Card Holder Name</div>
         <div className="relative">
           <CreditCard className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-5 w-5" />
           <Input
@@ -94,7 +94,7 @@ export default function PaymentSetting() {
       </div>
 
       <div className="space-y-4">
-        <div className="font-medium">Country</div>
+        <div className="font-semibold text-[15px] text-[#4B4B4B]">Country</div>
         <div className="flex">
           <div className="w-12 flex items-center justify-center border border-r-0 rounded-l-md text-xl">
             {flags.countryCode(selectedCountry)?.emoji}
@@ -144,10 +144,10 @@ export default function PaymentSetting() {
           <table className="w-full rounded-lg overflow-hidden">
             <thead>
               <tr className="text-left bg-gray-50">
-                <th className="p-4 font-medium rounded-tl-lg">Order ID</th>
-                <th className="p-4 font-medium">Date</th>
-                <th className="p-4 font-medium">Ammount</th>
-                <th className="p-4 font-medium rounded-tr-lg">Status</th>
+                <th className="p-4 text-[15px] text-[#222222E5] font-medium rounded-tl-lg">Order ID</th>
+                <th className="p-4 text-[15px] text-[#222222E5] font-medium">Date</th>
+                <th className="p-4 text-[15px] text-[#222222E5] font-medium">Ammount</th>
+                <th className="p-4 text-[15px] text-[#222222E5] font-medium rounded-tr-lg">Status</th>
               </tr>
             </thead>
             <tbody>

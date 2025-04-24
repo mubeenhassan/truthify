@@ -23,7 +23,6 @@ const PROFILES_AVAILABLE = [
     reportCount: 238,
     score: 7.8,
     industry: "Technology",
-    isLocked: true,
   },
   {
     id: 42,
@@ -77,7 +76,6 @@ const PROFILES_CREATED = [
     reportCount: 238,
     score: 7.8,
     industry: "Technology",
-    isLocked: true,
   },
   {
     id: 21,

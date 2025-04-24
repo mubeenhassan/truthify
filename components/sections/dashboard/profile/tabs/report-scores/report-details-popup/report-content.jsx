@@ -34,7 +34,7 @@ export function ReportContent({ date, source, analysis, quotes }) {
 
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="flex items-center bg-white rounded-md p-1 border border-gray-200 w-fit">
+      <div className="flex items-center bg-white rounded-md p-1 border border-gray-200 w-fit mt-2">
         {tabs.map((tab, index) => (
           <div key={tab.id} className="flex items-center">
             <button
@@ -54,25 +54,25 @@ export function ReportContent({ date, source, analysis, quotes }) {
         ))}
       </div>
 
-      <div className="mt-6 w-full max-w-3xl">
+      <div className="mt-6 w-full max-w-3xl ">
         {activeTab === "summary" && (
-          <div className="w-full">
-            <h3 className="text-2xl font-bold mb-4">Analysis of UnBias</h3>
+          <div className="w-full overflow-y-scroll h-full max-h-[400px] px-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+            <h3 className="text-[14px] font-semibold mb-1 text-[#202224]">Analysis of UnBias</h3>
             <div className="flex flex-wrap mb-4">
-              <div className="mr-8 mb-2">
-                <span className="font-semibold">Date:</span> {date}
+              <div className="mr-8 mb-2 text-[12px]">
+                <span className="font-semibold text-[#202224] text-[12px]">Date:</span > {date}
               </div>
-              <div>
-                <span className="font-semibold">Source:</span> {source}
+              <div className="text-[#202224] text-[12px]">
+                <span className="font-semibold text-[#747474] tetx-[12px]">Source:</span> {source}
               </div>
             </div>
-            <p className="text-gray-800 leading-relaxed mb-8">{analysis}</p>
-
-            <h3 className="text-2xl font-bold mb-4">
+            <p className="text-gray-800 leading-relaxed  text-[12px]">{analysis}</p>
+          <hr className="w-full bg-gray-300 my-6"/>
+            <h3 className="text-2xl font-bold mb-4 text-[14px] text-[#202224]">
               Quote from Elizabeth Holmes
             </h3>
             {quotes.map((quote, index) => (
-              <p key={index} className="text-gray-800 leading-relaxed mb-4">
+              <p key={index} className="text-gray-800 leading-relaxed mb-4 text-[12px]">
                 "{quote}"
               </p>
             ))}
@@ -80,19 +80,19 @@ export function ReportContent({ date, source, analysis, quotes }) {
         )}
 
         {activeTab === "transcript" && (
-          <div className="w-full h-[400px] overflow-y-scroll">
+          <div className="w-full h-[400px] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
             {transcriptData.map((item, index) => (
               <div
                 key={index}
                 className={`mb-6 bg-gray-50 p-4 rounded-lg w-full max-w-[400px] ${index%2 !== 0 ? "ml-auto" : ""}`}
               >
                 <div className="flex justify-between items-center mb-2">
-                  <h4 className="font-medium text-gray-800">{item.speaker}</h4>
-                  <span className="text-sm text-gray-500">
+                  <h4 className="font-medium text-[#252836] text-[13px]">{item.speaker}</h4>
+                  <span className="text-sm text-gray-700 text-[12px]">
                     {item.timestamp}
                   </span>
                 </div>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-[#808191] text-[12px]   leading-relaxed">
                     {item.content}
                   </p>
               </div>
