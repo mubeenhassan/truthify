@@ -22,7 +22,7 @@ export default function AttributeCard({
   return (
     <div
       id={id}
-      className="relative w-full max-w-[195px] h-full"
+      className="flex-shrink-0 relative w-full max-w-[180px] h-full"
       // style={{ perspective: "1000px" }}
     >
       <div

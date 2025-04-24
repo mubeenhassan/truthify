@@ -38,10 +38,10 @@ export function MainContent({ dashboardData }) {
           </Link>
         </div>
 
-        {recentProfile.length > 0 ? (
+        {!recentProfile.length > 0 ? (
           <ProfileList profiles={recentProfile} isRecent={true} />
         ) : (
-          <div className="bg-white h-32 shadow-sm rounded-xl p-5 border border-slate-100">
+          <div className="bg-white h-48 shadow-sm rounded-xl p-5 border border-slate-100">
             <h3 className="text-lg font-semibold text-zinc-800 mb-2">
               My Recent Profile
             </h3>

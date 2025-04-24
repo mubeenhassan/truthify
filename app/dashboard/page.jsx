@@ -30,6 +30,33 @@ const getMockData = () => {
       avatar: "/images/avatar-elon.png",
       isLocked: true,
     },
+    {
+      id:11,
+      name: "Mubeen Hassan",
+      title: "CEO of Webryo",
+      score: 7.8,
+      logo: "/icons/microsoft.svg",
+      avatar: "/images/avatar-satya.png",
+      isLocked: false,
+    },
+    {
+      id:21,
+      name: "Sundar Pichai",
+      title: "CEO of Google",
+      score: 7.1,
+      logo: "/icons/google-color.svg",
+      avatar: "/images/avatar-sundar.png",
+      isLocked: true,
+    },
+    {
+      id:31,
+      name: "Elon Musk",
+      title: "CEO of Tesla Motors",
+      score: 4.6,
+      logo: "/images/tesla.png",
+      avatar: "/images/avatar-elon.png",
+      isLocked: true,
+    },
   ];
 
   const recentProfileData = [

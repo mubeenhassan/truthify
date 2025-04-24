@@ -101,28 +101,24 @@ const MetricsProgress = () => {
 
   return (
     <div className="w-full flex flex-col gap-4">
-      <div className="overflow-hidden">
+      <div className="overflow-hidden w-full max-w-[95vw] md:max-w-[50vw]">
         <h3 className="text-[18px] text-[#292929] font-semibold my-1">
           Positive Attributes
         </h3>
-        <div className="">
-          <div className="flex w-full  gap-4 pb-2 overflow-x-auto  scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+          <div className="flex w-full gap-4 pb-2 overflow-x-auto  scrollbar-thin ">
             {positiveAttributes.map((att, i) => (
               <div key={i} className="flex-shrink-0">
                 <AttributeCard {...att} />
               </div>
             ))}
           </div>
-        </div>
 
         <h3 className="text-[18px] text-[#292929] font-semibold mt-7 my-1">
           Negative Attributes
         </h3>
-        <div className="flex overflow-x-auto w-full gap-4 pb-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+        <div className="flex overflow-x-auto w-full gap-4 pb-2 scrollbar-thin">
           {negativeAttributes.map((att) => (
-            <div key={att.id} className="flex-shrink-0">
-              <AttributeCard {...att} />
-            </div>
+              <AttributeCard key={att.id}  {...att} />
           ))}
         </div>
       </div>
