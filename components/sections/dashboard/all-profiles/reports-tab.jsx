@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { ReportCard } from "@/components/ui/report-card";
 
@@ -110,29 +109,28 @@ export function ReportsTab({
     };
   }, []);
 
-  const searchParams = useSearchParams();
-
-useEffect(() => {
-  const filter = searchParams.get("filter");
-
-  switch (filter) {
-    case "new":
-      setSortBy("Latest to Oldest");
-      break;
-    case "old":
-      setSortBy("Oldest to Latest");
-      break;
-    case "az":
-      setSortBy("A to Z");
-      break;
-    case "za":
-      setSortBy("Z to A");
-      break;
-    default:
-      break;
-  }
-}, [searchParams]);
-
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const filter = params.get("filter");
+  
+    switch (filter) {
+      case "new":
+        setSortBy("Latest to Oldest");
+        break;
+      case "old":
+        setSortBy("Oldest to Latest");
+        break;
+      case "az":
+        setSortBy("A to Z");
+        break;
+      case "za":
+        setSortBy("Z to A");
+        break;
+      default:
+        break;
+    }
+  }, []);
+  
 
   const sortedReports = [...reports].sort((a, b) => {
     switch (sortBy) {
