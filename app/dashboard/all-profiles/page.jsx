@@ -44,7 +44,7 @@ export default function AllProfiles() {
           >
             Profiles Available
           </button>
-          {/* <button
+          <button
             onClick={() => handleTabChange("reports")}
             className={`px-6 py-2 text-sm cursor-pointer font-medium rounded-r-lg ${
               activeTab === "reports"
@@ -53,7 +53,7 @@ export default function AllProfiles() {
             }`}
           >
             Reports Available
-          </button> */}
+          </button>
         </div>
       </div>
 

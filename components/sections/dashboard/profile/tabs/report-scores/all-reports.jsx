@@ -10,14 +10,25 @@ const AllReports = ({ reports }) => {
         </h3>
       </div>
 
-      <div className="space-y-3.5 mb-4">
-        {reports.map((report) => (
-          <ReportCard
-            key={report.id}
-            report={{ ...report, variant: "compact" }}
-          />
-        ))}
-      </div>
+      <div className="h-full max-h-[300px] overflow-y-scroll scrollbar-thin px-2">
+        <div className="space-y-3.5 mb-4">
+          {reports.map((report) => (
+            <ReportCard
+              key={report.id}
+              report={{ ...report, variant: "compact" }}
+            />
+          ))}
+        </div>
+        <div className="space-y-3.5 mb-4">
+          {reports.map((report) => (
+            <ReportCard
+              key={report.id}
+              report={{ ...report, variant: "compact" }}
+            />
+          ))}
+        </div>
+        </div>
+
       <div className="text-center mt-3">
         <Link
           href="/dashboard/my-reports"

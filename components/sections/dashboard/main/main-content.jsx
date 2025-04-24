@@ -85,7 +85,7 @@ export function MainContent({ dashboardData }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white shadow-sm rounded-xl p-5 flex flex-col items-center justify-between border border-slate-100">
             <h3 className="text-[20px]  font-semibold text-zinc-800 mb-4 self-start">
-              Average TruthMetric
+              Average Integrity Score
             </h3>
             <div className="relative w-36 h-36 mb-4">
               <svg className="w-full h-full -rotate-90" viewBox="0 0 36 36">
