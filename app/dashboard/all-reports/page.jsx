@@ -1,7 +1,5 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { ReportsTab } from "@/components/sections/dashboard/all-profiles/reports-tab";
+import Link from "next/link";
 
 const REPORTS_AVAILABLE = [
   {
@@ -154,71 +152,30 @@ const REPORTS_CREATED = [
 ];
 
 export default function AllReportsPage() {
-  const [activeTab, setActiveTab] = useState("available");
-
-  useEffect(() => {
-    const hash = window.location.hash.split("?")[0].replace("#", "");
-    if (hash === "available" || hash === "created") {
-      setActiveTab(hash);
-    }
-
-    const handleHashChange = () => {
-      const hash = window.location.hash.split("?")[0].replace("#", "");
-      if (hash === "available" || hash === "created") {
-        setActiveTab(hash);
-      }
-    };
-
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
-
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-    window.location.hash = tab;
-  };
-
   return (
     <div className="w-full bg-slate-50 min-h-screen p-8 flex flex-col items-center">
-      {/* Tabs */}
       <div className="flex mb-6">
         <div className="inline-flex rounded-md shadow-sm" role="group">
-          <button
-            onClick={() => handleTabChange("available")}
-            className={`px-6 py-2 text-sm cursor-pointer font-medium rounded-l-lg ${
-              activeTab === "available"
-                ? "bg-blue-600 text-white"
-                : "bg-white text-gray-700 hover:bg-gray-100"
-            }`}
+          <Link
+            href="/dashboard/all-reports"
+            className={`px-6 py-2 text-sm cursor-pointer font-medium rounded-l-lg bg-blue-600 text-white`}
           >
             Reports Available
-          </button>
-          <button
-            onClick={() => handleTabChange("created")}
-            className={`px-6 py-2 text-sm cursor-pointer font-medium rounded-r-lg ${
-              activeTab === "created"
-                ? "bg-blue-600 text-white"
-                : "bg-white text-gray-700 hover:bg-gray-100"
-            }`}
+          </Link>
+          <Link
+            href="/dashboard/my-reports"
+            className={`px-6 py-2 text-sm cursor-pointer font-medium rounded-r-lg  bg-white text-gray-700 hover:bg-gray-100`}
           >
             Reports Created
-          </button>
+          </Link>
         </div>
       </div>
 
-      {activeTab === "available" ? (
-        <ReportsTab
-          title="Your Available Reports"
-          subTitle="Dive in to detailed insights of your available reports"
-          reports={REPORTS_AVAILABLE}
-        />
-      ) : (
-        <ReportsTab
-          title="Your Created Reports"
-          subTitle="Dive in to detailed insights of your created reports"
-          reports={REPORTS_CREATED}
-        />
-      )}
+      <ReportsTab
+        title="Your Available Reports"
+        subTitle="Dive in to detailed insights of your available reports"
+        reports={REPORTS_AVAILABLE}
+      />
     </div>
   );
 }

@@ -20,7 +20,7 @@ const navItems = [
     label: "Main",
   },
   {
-    href: "/dashboard/my-profiles#created",
+    href: "/dashboard/my-profiles",
     icon: <User className="w-5 h-5" />,
     label: "My Profiles",
   },
