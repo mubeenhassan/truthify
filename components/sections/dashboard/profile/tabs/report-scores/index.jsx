@@ -19,9 +19,8 @@ const ContentRight = ({ profile }) => {
   const searchParams = useSearchParams();
   const activeReport = searchParams.get("reprot");
   const activeReportDetails = profile.reports.find(
-    (report) => report.id === activeReport
+    (report) => report.id === Number(activeReport)
   )?.reportDetails;
-
   return (
     <>
       {activeReportDetails && activeReportDetails.length > 0 ? (
