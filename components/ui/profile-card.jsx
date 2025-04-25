@@ -27,7 +27,7 @@ const ProfileCardContent = ({ profile, variant }) => {
           {/* Avatar Image, adjusted for the second variant */}
           <div
             className={`${
-              variant === "second "
+              variant === "second"
                 ? "absolute -top-2/3 left-1/2 object-cover transform -translate-x-1/2 -translate-y-1/2"
                 : ""
             }`}
