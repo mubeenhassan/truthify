@@ -20,7 +20,7 @@ const ReportList = ({ reportList }) => {
   return (
     <>
       <div className="space-y-4">
-        {reportList.map((data, index) => (
+        {reportList?.map((data, index) => (
           <div key={index} className="flex items-center border-b border-gray-200">
             <div className="flex-shrink-0 p-2 mr-4">
               <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(4, 138, 226, 0.15)" }}>

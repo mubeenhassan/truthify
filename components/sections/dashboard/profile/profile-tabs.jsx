@@ -3,7 +3,7 @@ export default function ProfileTabs({ activeTab, setActiveTab }) {
   const tabs = [
     { id: "profile-scores", label: "Profile Scores" },
     { id: "cumulative-metrics", label: "Cumulative Metrics" },
-    { id: "report-scores", label: "Report Scores" },
+    { id: "report-scores", label: "Reports" },
   ];
 
   return (

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FileText, LockIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export function ReportCard({ report }) {
+export function ReportCard({ report, profileId = 1, activeReport }) {
   const {
     id,
     title,
@@ -21,6 +21,9 @@ export function ReportCard({ report }) {
       className={cn(
         "relative flex items-start w-full rounded-lg border border-gray-200 bg-white shadow-sm transition-colors",
         variant === "compact" ? "p-2" : "p-4",
+        activeReport == report.id
+          ? "rounded-md group text-blue-600 bg-blue-50 border-r-4 border-blue-600"
+          : "",
         className
       )}
     >
@@ -75,7 +78,10 @@ export function ReportCard({ report }) {
   }
 
   return (
-    <Link href={`/dashboard/reports/${id}`} className="block no-underline">
+    <Link
+      href={`/dashboard/profile/${profileId}?reprot=${id}#report-scores`}
+      className="block no-underline"
+    >
       <CardContent />
     </Link>
   );

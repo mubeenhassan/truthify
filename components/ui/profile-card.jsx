@@ -86,8 +86,7 @@ const ProfileCard = ({ profile, variant }) => {
     <div className="space-y-4">
       {isLocked ? (
         <Link href={`/dashboard/profile/${id}#report-scores`}>
-        
-        {ProfileContent}
+          {ProfileContent}
         </Link>
       ) : (
         <Link href={`/dashboard/profile/${id}`} className="block no-underline">
@@ -97,6 +96,7 @@ const ProfileCard = ({ profile, variant }) => {
 
       {report && (
         <ReportCard
+          profileId={profile.id}
           report={{ ...report, isLocked: isLocked, variant: "compact" }}
         />
       )}

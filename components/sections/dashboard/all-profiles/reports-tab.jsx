@@ -193,8 +193,8 @@ export function ReportsTab({
       </div>
 
       <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8">
-        {sortedReports.map((report) => (
-          <ReportCard key={report.id} report={report} />
+        {sortedReports.map((report, index) => (
+          <ReportCard key={index} report={report} />
         ))}
       </div>
     </div>

@@ -41,7 +41,7 @@ const REPORTS_AVAILABLE = [
     isLocked: false,
   },
   {
-    id: 5,
+    id: 51,
     title: "SpaceX's Next Mission: Mars Colonization",
     speaker: "Elon Musk",
     source: "SpaceX Event",
@@ -50,7 +50,7 @@ const REPORTS_AVAILABLE = [
     isLocked: true,
   },
   {
-    id: 6,
+    id: 2,
     title: "The Rise of Electric Vehicles and Sustainability",
     speaker: "Mary Barra",
     source: "YouTube",
@@ -59,7 +59,7 @@ const REPORTS_AVAILABLE = [
     isLocked: false,
   },
   {
-    id: 7,
+    id: 3,
     title: "Blockchain Beyond Crypto: Use Cases in 2023",
     speaker: "Vitalik Buterin",
     source: "Crypto Summit",
@@ -68,7 +68,7 @@ const REPORTS_AVAILABLE = [
     isLocked: false,
   },
   {
-    id: 8,
+    id: 4,
     title: "AI and Data Privacy: A Delicate Balance",
     speaker: "Satya Nadella",
     source: "Microsoft Keynote",
@@ -80,7 +80,7 @@ const REPORTS_AVAILABLE = [
 
 const REPORTS_CREATED = [
   {
-    id: 54,
+    id: 1,
     title: "Exploring the Metaverse: The Next Frontier",
     speaker: "Mark Zuckerberg",
     source: "Facebook Live",
@@ -89,7 +89,7 @@ const REPORTS_CREATED = [
     isLocked: false,
   },
   {
-    id: 35,
+    id: 2,
     title: "SpaceX's Next Mission: Mars Colonization",
     speaker: "Elon Musk",
     source: "SpaceX Event",
@@ -98,7 +98,7 @@ const REPORTS_CREATED = [
     isLocked: false,
   },
   {
-    id: 63,
+    id: 3,
     title: "The Rise of Electric Vehicles and Sustainability",
     speaker: "Mary Barra",
     source: "YouTube",
@@ -107,7 +107,7 @@ const REPORTS_CREATED = [
     isLocked: false,
   },
   {
-    id: 11,
+    id: 4,
     title: "The Future of AI: Innovations and Challenges",
     speaker: "Elon Musk",
     source: "YouTube",
@@ -116,7 +116,7 @@ const REPORTS_CREATED = [
     isLocked: false,
   },
   {
-    id: 72,
+    id: 1,
     title: "Tech Giants: Who Will Dominate in 2025?",
     speaker: "Sundar Pichai",
     source: "Vimeo",
@@ -125,7 +125,7 @@ const REPORTS_CREATED = [
     isLocked: false,
   },
   {
-    id: 93,
+    id: 2,
     title: "The Evolution of Quantum Computing",
     speaker: "Jensen Huang",
     source: "TED Talks",
@@ -134,7 +134,7 @@ const REPORTS_CREATED = [
     isLocked: false,
   },
   {
-    id: 71,
+    id: 3,
     title: "Blockchain Beyond Crypto: Use Cases in 2023",
     speaker: "Vitalik Buterin",
     source: "Crypto Summit",
@@ -143,7 +143,7 @@ const REPORTS_CREATED = [
     isLocked: false,
   },
   {
-    id: 81,
+    id: 4,
     title: "AI and Data Privacy: A Delicate Balance",
     speaker: "Satya Nadella",
     source: "Microsoft Keynote",

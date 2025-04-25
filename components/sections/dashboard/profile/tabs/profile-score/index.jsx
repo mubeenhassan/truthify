@@ -3,7 +3,7 @@ import ComparativeAnalysis from "./comparative-analysis";
 import FallacyDetection from "./fallacy-detection";
 
 const ContentLeft = ({ profile }) => (
-  <ReportSection reports={profile.reports} />
+  <ReportSection reports={profile.reports} profileId={profile.id} />
 );
 
 const ContentRight = ({ profile }) => (

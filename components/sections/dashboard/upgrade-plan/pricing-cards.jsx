@@ -15,7 +15,7 @@ export default function PricingCards() {
   const plans = [
     {
       id: "basic",
-      name: "Background Integrity Check",
+      name: "Integrity Report",
       description: "Best for personal use",
       price: 19,
       borderColor: "border-blue-300",
@@ -30,7 +30,7 @@ export default function PricingCards() {
     },
     {
       id: "standard",
-      name: "Integrity Report Pro",
+      name: "Profile Unlock",
       description: "Advanced report for HR and Personal Use",
       price: 500,
       borderColor: "border-[#069AEE]",
@@ -47,7 +47,7 @@ export default function PricingCards() {
     },
     {
       id: "enterprise",
-      name: "Team Pack (10 Reports)",
+      name: "10 Profiles",
       description: "Team access for recruiters & finance",
       price: 2500,
       borderColor: "border-yellow-400",
